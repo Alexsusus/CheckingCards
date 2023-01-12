@@ -22,8 +22,8 @@ public class CheckDateCards {
         return new AsyncResult<>(cardList);
     }
 
-    @Async
-    public void start() {
+ /*    @Async
+   public void start() {
         try {
             Future<List<Card>> future = checkDate();
             LocalDate localDate = LocalDate.now();
@@ -40,5 +40,5 @@ public class CheckDateCards {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }
