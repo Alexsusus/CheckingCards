@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.LocalDate;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+
 @org.springframework.stereotype.Controller
 public class MainController {
     @Autowired
@@ -19,11 +24,14 @@ public class MainController {
     }
 
     @GetMapping("home")
-    public String home(Model model) {
+    public String home(Model model) throws InterruptedException, ExecutionException {
         Iterable<Card> cardsIt = cardRepository.findAll();
         model.addAttribute("cards", cardsIt);
+
         return "home";
-    }
+        }
+
+
     @PostMapping("addCardForm")
     public String addCardForm(@ModelAttribute Card card) {
         System.err.println(card);
