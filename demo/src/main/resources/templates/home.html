@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>Home</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<form th:action="@{addCardForm}" method="post">
+  <input type="text" name="bank" placeholder="Bank">
+  <input type="text" name="owner" placeholder="Owner">
+  <input type="date" name="date" placeholder="Date">
+  <input type="submit" value="SAVE">
+</form>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Bank</th>
+<th>Owner</th>
+<th>Date</th>
+</tr>
+
+<tr th:each="el : ${cards}">
+  <td th:text="${el.id}"></td>
+  <td th:text="${el.bank}"></td>
+  <td th:text="${el.owner}"></td>
+  <td th:text="${el.date}"></td>
+</tr>
+
+
+</table>
+
+</body>
+</html>
