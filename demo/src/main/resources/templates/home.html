@@ -7,7 +7,7 @@
 <body>
 
 <form th:action="@{addCardForm}" method="post">
-  <input type="text" name="bank" placeholder="Bank">
+  <input type="text" name="number" placeholder="Number">
   <input type="text" name="owner" placeholder="Owner">
   <input type="date" name="date" placeholder="Date">
   <input type="submit" value="SAVE">
@@ -17,14 +17,14 @@
 
 <tr>
 <th>ID</th>
-<th>Bank</th>
+<th>Number</th>
 <th>Owner</th>
 <th>Date</th>
 </tr>
 
 <tr th:each="el : ${cards}">
   <td th:text="${el.id}"></td>
-  <td th:text="${el.bank}"></td>
+  <td th:text="${el.number}"></td>
   <td th:text="${el.owner}"></td>
   <td th:text="${el.date}"></td>
 </tr>

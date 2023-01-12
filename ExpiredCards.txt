@@ -1,4 +1,1 @@
-Card{id=3, bank='2', owner='2', date=2023-01-11}
-Card{id=4, bank='null', owner='2', date=2022-12-31}
-Card{id=5, bank='11', owner='11', date=2022-12-31}
-Card{id=6, bank='2222222', owner='22222222', date=2023-01-11}
+Card{id=9, number='4441 5551 555 2342', owner='Petrov Petr Petrovich', date=2023-01-04}

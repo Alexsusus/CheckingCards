@@ -17,8 +17,8 @@ public class Card {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "bank")
-    private String bank;
+    @Column(name = "number", unique = true)
+    private String number;
 
     @Column(name = "owner")
     private String owner;
@@ -28,9 +28,9 @@ public class Card {
 
     private LocalDate date;
 
-    public Card(Integer id, String bank, String owner, LocalDate date) {
+    public Card(Integer id, String number, String owner, LocalDate date) {
         this.id = id;
-        this.bank = bank;
+        this.number = number;
         this.owner = owner;
         this.date = date;
     }
@@ -42,26 +42,26 @@ public class Card {
     public String toString() {
         return "Card{" +
                 "id=" + id +
-                ", bank='" + bank + '\'' +
+                ", number='" + number + '\'' +
                 ", owner='" + owner + '\'' +
                 ", date=" + date +
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getBank() {
-        return bank;
+    public String getNumber() {
+        return number;
     }
 
-    public void setBank(String bank) {
-        this.bank = bank;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public String getOwner() {

@@ -35,13 +35,12 @@ public class CheckDateCards {
         return new AsyncResult<>(cardsList);
     }
 
-    @Scheduled(fixedRate = 3000)
+    @Scheduled(fixedRate = 3000) //(cron = "0 0/30 8 * * *") every day at 8 a.m.
     @Async
     public void start() {
         Future<List<Card>> future = searchExpiredCards();
-        List<Card> cardList;
         try (FileWriter writer = new FileWriter("ExpiredCards.txt", false)) {
-            cardList = future.get();
+            List<Card> cardList = future.get();
             System.err.println(cardList.size());
             for (int i = 0; i < cardList.size(); i++) {
                 writer.write(cardList.get(i).toString() + "\n");
